@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const userRoutes = require('./routes/user');
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Routes
+app.use('/api/user', userRoutes);
 
 app.listen(process.env.PORT || 4000, () => {
     console.log(`API is now online on port ${ process.env.PORT || 3000 }`)
