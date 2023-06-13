@@ -19,7 +19,8 @@ const UserSchema = new mongoose.Schema({
     },
     loginType: {
         type: String,
-        required: [true, 'Login type is required.']
+        required: [true, 'Login type is required.'],
+        default: 'email'
     },
     profilePic: {
         type: String,
