@@ -2,13 +2,15 @@
 The backend of Budget Tracker app, built using NodeJS
 
 
-# Getting Started
+## Getting Started
 
-1. Installation of dependencies  
-- Run `npm install`  
+1. Installation  
+- `git clone git@github.com:sjmburlaza/budget-tracker-server.git`  
+- `cd budget-tracker-server`  
+- `npm install`  
 
 2. Build  
-- Create an .env file with the `MONGO_URL=<value>` to establish DB connection  
+- Create a .env file with the `MONGO_URL=<value>` to establish DB connection  
 - Run `npm run start`  
-- Visit http://localhost:4000
+- Navigate to http://localhost:4000
 
