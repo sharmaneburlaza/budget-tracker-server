@@ -65,6 +65,10 @@ const UserSchema = new mongoose.Schema({
             createdOn: {
                 type: Date,
                 default: Date.now(),
+            },
+            transactionDate: {
+                type: Date,
+                // default: Date.now(),
                 required: 'Please enter the date this transaction took place.'
             },
             amount: {

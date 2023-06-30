@@ -43,13 +43,14 @@ router.put('/update-category', auth.verify, (req, res) => {
 })
 
 router.post('/add-record', auth.verify, (req, res) => {
-    const { categoryName, categoryType, categoryId, amount, description } = req.body;
+    const { categoryName, categoryType, categoryId, amount, description, transactionDate } = req.body;
     const params = {
         categoryId,
         categoryName,
         categoryType,
         amount,
         description,
+        transactionDate,
         userId: auth.decode(req.headers.authorization).id
     }
     UserController.addRecord(params).then(user => res.send(user))

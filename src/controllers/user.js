@@ -92,7 +92,7 @@ module.exports.updateCategory = (params) => {
 
 // Adding of new record
 module.exports.addRecord = (params) => {
-    const { userId, categoryId, categoryName, categoryType, amount, description } = params;
+    const { userId, categoryId, categoryName, categoryType, amount, description, transactionDate } = params;
 
     return User.findById(userId).then(user => {
         user.records.push({
@@ -100,7 +100,8 @@ module.exports.addRecord = (params) => {
             categoryName,
             categoryType,
             amount,
-            description
+            description,
+            transactionDate
         })
         return user.save().then((user, err) => {
             return err ? false : true;
@@ -110,7 +111,7 @@ module.exports.addRecord = (params) => {
 
 // Update of record
 module.exports.updateRecord = (params) => {
-    const { userId, recordId, categoryId,categoryName, categoryType,amount, description } = params;
+    const { userId, recordId, categoryId,categoryName, categoryType,amount, description, transactionDate } = params;
 
     return User.updateOne(
         {
@@ -123,7 +124,8 @@ module.exports.updateRecord = (params) => {
                 "records.$.categoryName": categoryName,
                 "records.$.categoryType": categoryType,
                 "records.$.amount": amount,
-                "records.$.description": description
+                "records.$.description": description,
+                "records.$.transactionDate": transactionDate
             }
         }
     ).then((user, err) => {
