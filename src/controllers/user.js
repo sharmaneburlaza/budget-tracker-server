@@ -31,8 +31,9 @@ module.exports.register = (params) => {
 
 // User Login
 module.exports.login = (params) => {
-    const { emai, password } = params;
-    return User.findOne({ emai }).then(user => {
+    const { email, password } = params;
+    
+    return User.findOne({ email }).then(user => {
         if (user === null) {
             return { error: 'User does not exist' };
         }
