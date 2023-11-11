@@ -5,7 +5,7 @@ The backend of Budget Tracker app, built using NodeJS
 ## Getting Started
 
 1. Installation  
-- `git clone git@github.com:sjmburlaza/budget-tracker-server.git`  
+- `git clone git@github.com:sharmaneburlaza/budget-tracker-server.git`  
 - `cd budget-tracker-server`  
 - `npm install`  
 
